@@ -1,0 +1,21 @@
+<h1><%= @place["name"] %></h1>
+ 
+<% @posts = Post.all %>
+
+<% for post in @posts %>
+    <% if (post["place_id"] == @place["id"]) %>
+    <p>
+        <h3><%= post["title"] %></h3>
+    </p>
+    <p>
+        <b><%= post["posted_on"] %></b>
+    </p>
+    <p>
+        <%= post["description"] %>
+    </p>
+    <% end %>
+<% end %>
+
+<p>
+    <a href="/posts/new">New Post</a>
+</p>
